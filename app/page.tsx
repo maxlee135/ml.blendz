@@ -75,8 +75,8 @@ export default function Home() {
             <p className="mt-1 text-sm text-zinc-400">years cutting</p>
           </div>
           <div>
-            <p className="text-4xl font-bold text-gold">100s</p>
-            <p className="mt-1 text-sm text-zinc-400">of clients</p>
+            <p className="text-4xl font-bold text-gold">500+</p>
+            <p className="mt-1 text-sm text-zinc-400">clients</p>
           </div>
           <div>
             <p className="text-4xl font-bold text-gold">$30</p>
