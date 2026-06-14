@@ -1,65 +1,136 @@
-import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+    <>
+      {/* Hero */}
+      <section className="flex min-h-[88vh] flex-col items-center justify-center px-4 py-20 text-center">
+        <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-gold">
+          Los Altos / Mountain View, CA
+        </p>
+        <h1 className="mb-6 text-5xl font-bold leading-tight tracking-tight text-white md:text-7xl">
+          Clean fades.<br />Real results.
+        </h1>
+        <p className="mb-10 max-w-md text-lg text-zinc-400">
+          Precision cuts from a barber who&apos;s done it hundreds of times.
+</p>
+        <div className="flex flex-col gap-4 sm:flex-row">
+          <Link
+            href="/book"
+            className="rounded-full bg-gold px-8 py-4 text-base font-bold text-black transition-colors hover:bg-gold-light"
+          >
+            Book a Cut
+          </Link>
+          <Link
+            href="/services"
+            className="rounded-full border border-zinc-700 px-8 py-4 text-base font-medium text-white transition-colors hover:border-zinc-500"
+          >
+            See Prices
+          </Link>
+        </div>
+      </section>
+
+      {/* Stats strip */}
+      <section className="border-y border-zinc-800 bg-zinc-900 px-4 py-12">
+        <div className="mx-auto grid max-w-4xl grid-cols-3 gap-8 text-center">
+          <div>
+            <p className="text-4xl font-bold text-gold">2</p>
+            <p className="mt-1 text-sm text-zinc-400">years cutting</p>
+          </div>
+          <div>
+            <p className="text-4xl font-bold text-gold">100s</p>
+            <p className="mt-1 text-sm text-zinc-400">of clients</p>
+          </div>
+          <div>
+            <p className="text-4xl font-bold text-gold">$30</p>
+            <p className="mt-1 text-sm text-zinc-400">starting price</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Services preview */}
+      <section className="px-4 py-20">
+        <div className="mx-auto max-w-4xl">
+          <h2 className="mb-12 text-center text-3xl font-bold text-white">
+            What I Offer
+          </h2>
+          <div className="grid gap-6 md:grid-cols-2">
+            <div className="rounded-2xl border border-zinc-800 bg-zinc-900 p-8">
+              <p className="mb-2 text-3xl font-bold text-gold">$30</p>
+              <h3 className="mb-3 text-xl font-semibold text-white">Haircut</h3>
+              <p className="text-zinc-400">
+                Clean fade, taper, or trim — whatever you need to walk out
+                looking fresh.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-zinc-800 bg-zinc-900 p-8">
+              <p className="mb-2 text-3xl font-bold text-gold">$70</p>
+              <h3 className="mb-3 text-xl font-semibold text-white">
+                Highlights / Dye
+              </h3>
+              <p className="text-zinc-400">
+                Color services including highlights and full dye jobs —
+                bleaching included.
+              </p>
+            </div>
+          </div>
+          <div className="mt-8 text-center">
+            <Link
+              href="/services"
+              className="text-sm font-medium text-gold transition-colors hover:text-gold-light"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+              View all services &rarr;
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Social proof */}
+      <section className="border-t border-zinc-800 bg-zinc-900 px-4 py-20">
+        <div className="mx-auto max-w-2xl text-center">
+          <p className="mb-4 text-5xl font-bold text-white">1M+</p>
+          <p className="mb-8 text-lg text-zinc-400">
+            views on TikTok. Real work, real results — not a filter in sight.
           </p>
+          <div className="flex flex-col justify-center gap-4 sm:flex-row">
+            <a
+              href="https://www.tiktok.com/@ml.blendz._"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full border border-zinc-700 px-6 py-3 text-sm font-medium text-white transition-colors hover:border-zinc-500"
+            >
+              TikTok @ml.blendz._
+            </a>
+            <a
+              href="https://www.instagram.com/ml.blendz._"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full border border-zinc-700 px-6 py-3 text-sm font-medium text-white transition-colors hover:border-zinc-500"
+            >
+              Instagram @ml.blendz._
+            </a>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+      </section>
+
+      {/* Final CTA */}
+      <section className="px-4 py-24 text-center">
+        <div className="mx-auto max-w-xl">
+          <h2 className="mb-6 text-3xl font-bold text-white">
+            Ready to get a cut?
+          </h2>
+          <p className="mb-8 text-zinc-400">
+            Send a booking request and I&apos;ll confirm your appointment via text
+            or email.
+          </p>
+          <Link
+            href="/book"
+            className="inline-block rounded-full bg-gold px-10 py-4 text-base font-bold text-black transition-colors hover:bg-gold-light"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+            Book Now
+          </Link>
         </div>
-      </main>
-    </div>
+      </section>
+    </>
   );
 }
