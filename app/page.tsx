@@ -76,7 +76,7 @@ export default function Home() {
           </div>
           <div>
             <p className="text-4xl font-bold text-gold">500+</p>
-            <p className="mt-1 text-sm text-zinc-400">clients</p>
+            <p className="mt-1 text-sm text-zinc-400">haircuts</p>
           </div>
           <div>
             <p className="text-4xl font-bold text-gold">$30</p>
