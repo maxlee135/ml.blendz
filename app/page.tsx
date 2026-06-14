@@ -30,6 +30,43 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Video carousel */}
+      <section className="py-16">
+        <div className="mb-6 flex items-center justify-between px-4 md:px-8">
+          <h2 className="text-2xl font-bold text-white">The Work</h2>
+          <Link href="/gallery" className="text-sm font-medium text-gold transition-colors hover:text-gold-light">
+            See all &rarr;
+          </Link>
+        </div>
+        <div className="flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 pb-4 md:px-8 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          {[
+            "/gallery/haircuts/cut1.MOV",
+            "/gallery/haircuts/cut2.MOV",
+            "/gallery/haircuts/cut3.MOV",
+            "/gallery/haircuts/cut4.MOV",
+            "/gallery/haircuts/cut5.MOV",
+            "/gallery/haircuts/cut6.MOV",
+            "/gallery/dye/dye1.MOV",
+            "/gallery/dye/dye2.MOV",
+            "/gallery/dye/dye3.MOV",
+          ].map((src, i) => (
+            <div
+              key={i}
+              className="aspect-[9/16] w-56 shrink-0 snap-start overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900 md:w-64"
+            >
+              <video
+                src={src}
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="h-full w-full object-contain"
+              />
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* Stats strip */}
       <section className="border-y border-zinc-800 bg-zinc-900 px-4 py-12">
         <div className="mx-auto grid max-w-4xl grid-cols-3 gap-8 text-center">

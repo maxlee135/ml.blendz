@@ -3,10 +3,23 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Gallery — ml.blendz",
   description:
-    "Before and after photos from ml.blendz. Clean fades and color work in Los Altos / Mountain View.",
+    "Haircut and color work by ml.blendz in Los Altos / Mountain View.",
 };
 
-const placeholders = Array.from({ length: 9 }, (_, i) => i + 1);
+const haircutVideos = [
+  "/gallery/haircuts/cut1.MOV",
+  "/gallery/haircuts/cut2.MOV",
+  "/gallery/haircuts/cut3.MOV",
+  "/gallery/haircuts/cut4.MOV",
+  "/gallery/haircuts/cut5.MOV",
+  "/gallery/haircuts/cut6.MOV",
+];
+
+const dyeVideos = [
+  "/gallery/dye/dye1.MOV",
+  "/gallery/dye/dye2.MOV",
+  "/gallery/dye/dye3.MOV",
+];
 
 export default function Gallery() {
   return (
@@ -27,31 +40,43 @@ export default function Gallery() {
           </a>
         </div>
 
-        {/* Photo grid */}
-        <div className="grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-4">
-          {placeholders.map((n) => (
-            <div
-              key={n}
-              className="flex aspect-square items-center justify-center rounded-xl border border-zinc-800 bg-zinc-900"
-            >
-              <p className="px-4 text-center text-xs text-zinc-600">
-                Photo {n} — add your best work here
-              </p>
-            </div>
-          ))}
-        </div>
+        {/* Haircuts */}
+        <section className="mb-16">
+          <h2 className="mb-6 text-2xl font-bold text-white">Haircuts</h2>
+          <div className="grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-4">
+            {haircutVideos.map((src, i) => (
+              <div key={i} className="aspect-[9/16] overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900">
+                <video
+                  src={src}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="h-full w-full object-contain"
+                />
+              </div>
+            ))}
+          </div>
+        </section>
 
-        <p className="mt-10 text-center text-sm text-zinc-600">
-          More on{" "}
-          <a
-            href="https://www.instagram.com/ml.blendz._"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gold transition-colors hover:text-gold-light"
-          >
-            @ml.blendz._
-          </a>
-        </p>
+        {/* Dye / Color */}
+        <section>
+          <h2 className="mb-6 text-2xl font-bold text-white">Highlights & Dye</h2>
+          <div className="grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-4">
+            {dyeVideos.map((src, i) => (
+              <div key={i} className="aspect-[9/16] overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900">
+                <video
+                  src={src}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="h-full w-full object-contain"
+                />
+              </div>
+            ))}
+          </div>
+        </section>
       </div>
     </div>
   );
