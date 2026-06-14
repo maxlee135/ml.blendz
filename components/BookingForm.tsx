@@ -7,7 +7,7 @@ type Status = "idle" | "submitting" | "success" | "error";
 // 1. Go to https://formspree.io and create a free account with mrhenrylee@gmail.com
 // 2. Create a new form — Formspree will give you an endpoint like https://formspree.io/f/abcdefgh
 // 3. Replace the FORMSPREE_ENDPOINT value below with your actual endpoint
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID";
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/mvznddnw";
 
 export default function BookingForm() {
   const [status, setStatus] = useState<Status>("idle");
