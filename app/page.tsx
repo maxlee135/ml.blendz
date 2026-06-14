@@ -9,7 +9,7 @@ export default function Home() {
           Los Altos / Mountain View, CA
         </p>
         <h1 className="mb-6 text-5xl font-bold leading-tight tracking-tight text-white md:text-7xl">
-          Clean fades.<br />Real results.
+          ml.blendz
         </h1>
         <p className="mb-10 max-w-md text-lg text-zinc-400">
           Precision cuts from a barber who&apos;s done it hundreds of times.
