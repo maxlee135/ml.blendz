@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 
@@ -17,12 +18,16 @@ export default function About() {
           </h1>
         </div>
 
-        {/* Photo placeholder */}
+        {/* Photo */}
         <div className="mb-12 flex justify-center">
-          <div className="flex h-64 w-64 items-center justify-center rounded-2xl border border-zinc-800 bg-zinc-900">
-            <p className="px-4 text-center text-xs text-zinc-600">
-              TODO: Add a photo of Max
-            </p>
+          <div className="overflow-hidden rounded-2xl">
+            <Image
+              src="/max-cutting.jpg"
+              alt="Max cutting a client's hair in his garage barbershop"
+              width={400}
+              height={500}
+              className="object-cover"
+            />
           </div>
         </div>
 
