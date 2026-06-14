@@ -95,10 +95,7 @@ export default function Home() {
             <div className="rounded-2xl border border-zinc-800 bg-zinc-900 p-8">
               <p className="mb-2 text-3xl font-bold text-gold">$30</p>
               <h3 className="mb-3 text-xl font-semibold text-white">Haircut</h3>
-              <p className="text-zinc-400">
-                Clean fade, taper, or trim — whatever you need to walk out
-                looking fresh.
-              </p>
+              <p className="text-zinc-400">Fade, taper, trim.</p>
             </div>
             <div className="rounded-2xl border border-zinc-800 bg-zinc-900 p-8">
               <p className="mb-2 text-3xl font-bold text-gold">$70</p>
@@ -125,10 +122,8 @@ export default function Home() {
       {/* Social proof */}
       <section className="border-t border-zinc-800 bg-zinc-900 px-4 py-20">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="mb-4 text-5xl font-bold text-white">1M+</p>
-          <p className="mb-8 text-lg text-zinc-400">
-            views on TikTok. Real work, real results — not a filter in sight.
-          </p>
+          <p className="mb-4 text-5xl font-bold text-white">5M+</p>
+          <p className="mb-8 text-lg text-zinc-400">views on TikTok.</p>
           <div className="flex flex-col justify-center gap-4 sm:flex-row">
             <a
               href="https://www.tiktok.com/@ml.blendz._"
