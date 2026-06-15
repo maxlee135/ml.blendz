@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "About — ml.blendz",
   description:
-    "Max is a high school barber in Los Altos / Mountain View who's been cutting hair for 2 years with hundreds of clients and a 1M-view TikTok.",
+    "Max is a high school barber in Los Altos / Mountain View who's been cutting hair for 3 years with hundreds of clients and a 1M-view TikTok.",
 };
 
 export default function About() {
@@ -35,12 +35,12 @@ export default function About() {
         <div className="space-y-6 text-lg leading-relaxed text-zinc-300">
           <p>
             I&apos;m Max, a high schooler based in Los Altos / Mountain View who
-            started cutting hair two years ago. What started as cutting for
+            started cutting hair 3 years ago. What started as cutting for
             friends and family turned into hundreds of clients and a real
             business.
           </p>
           <p>
-            I take barbering seriously. I&apos;ve spent two years refining my
+            I take barbering seriously. I&apos;ve spent 3 years refining my
             technique — fades, tapers, color.
           </p>
         </div>
