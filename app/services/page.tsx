@@ -15,9 +15,7 @@ export default function Services() {
           <h1 className="mb-4 text-4xl font-bold text-white md:text-5xl">
             Services & Pricing
           </h1>
-          <p className="text-zinc-400">
-            Straightforward pricing. No hidden fees, no upsells.
-          </p>
+
         </div>
 
         <div className="grid gap-8 md:grid-cols-2">
