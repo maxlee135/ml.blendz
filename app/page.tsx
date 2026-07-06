@@ -78,4 +78,4 @@ export default function Home() {
           <p className="mb-10 text-xl text-zinc-400">views on TikTok.</p>
           <div className="flex flex-col justify-center gap-4 sm:flex-row">
             <a href="https://www.tiktok.com/@ml.blendz._" target="_blank" rel="noopener noreferrer" className="rounded-full border border-zinc-700 px-7 py-3 text-sm font-medium text-white transition-all hover:border-zinc-400 hover:bg-white/5">TikTok @ml.blendz._</a>
-            <a href="https://www.instagram.com/ml.blendz._" target="_blank" rel="noopener noreferrer" className="rounded-full border border-
+            <a href="https://www.instagram.com/ml.blendz._" target="_blank" rel="noopener noreferrer" className="rounded-full border border-zinc-700 px-7 py-3 text-sm font-medium text-white transition-all hover:border-zinc-400 hover:bg-white/5">Instagram @ml.blendz._</a>
