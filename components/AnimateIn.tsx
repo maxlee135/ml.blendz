@@ -7,7 +7,7 @@ interface AnimateInProps {
   delay?: number;
   direction?: "up" | "left" | "right" | "none";
 }
-
+ 
 export default function AnimateIn({ children, className, delay = 0, direction = "up" }: AnimateInProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
