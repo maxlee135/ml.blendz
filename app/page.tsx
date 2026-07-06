@@ -6,12 +6,12 @@ export default function Home() {
   return (
     <>
       <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-4 text-center">
-        <video src="/gallery/haircuts/cut2.MOV" autoPlay muted loop playsInline className="absolute inset-0 h-full w-full object-cover opacity-25" />
+        <video src="/gallery/haircuts/cut2.MOV" autoPlay muted loop playsInline className="absolute inset-0 h-full w-full object-cover object-top opacity-25"" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/30 to-zinc-950" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_60%,rgba(212,168,67,0.08),transparent)]" />
         <div className="relative z-10">
           <AnimateIn delay={0.1}><p className="mb-5 text-xs font-semibold uppercase tracking-[0.35em] text-gold">Los Altos · Mountain View, CA</p></AnimateIn>
-          <AnimateIn delay={0.2}><h1 className="font-display mb-6 text-[clamp(5rem,20vw,14rem)] leading-none tracking-widest text-white">ML.BLENDZ</h1></AnimateIn>
+          <AnimateIn delay={0.2}><h1 className="font-display mb-6 text-[clamp(2.5rem,10vw,10rem)] leading-none tracking-widest text-white"">ML.BLENDZ</h1></AnimateIn>
           <AnimateIn delay={0.35}><p className="mb-10 text-lg text-zinc-300 md:text-xl">Precision cuts. Real results.</p></AnimateIn>
           <AnimateIn delay={0.45}>
             <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
