@@ -49,6 +49,7 @@ export default function Home() {
             "/gallery/dye/dye1.MOV",
             "/gallery/dye/dye2.MOV",
             "/gallery/dye/dye3.MOV",
+            "/gallery/dye/dye4.MOV",
           ].map((src, i) => (
             <div
               key={i}
@@ -71,7 +72,7 @@ export default function Home() {
       <section className="border-y border-zinc-800 bg-zinc-900 px-4 py-12">
         <div className="mx-auto grid max-w-4xl grid-cols-3 gap-8 text-center">
           <div>
-            <p className="text-4xl font-bold text-gold">2</p>
+            <p className="text-4xl font-bold text-gold">3</p>
             <p className="mt-1 text-sm text-zinc-400">years cutting</p>
           </div>
           <div>

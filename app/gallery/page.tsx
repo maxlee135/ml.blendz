@@ -19,6 +19,7 @@ const dyeVideos = [
   "/gallery/dye/dye1.MOV",
   "/gallery/dye/dye2.MOV",
   "/gallery/dye/dye3.MOV",
+  "/gallery/dye/dye4.MOV",
 ];
 
 export default function Gallery() {
