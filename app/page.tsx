@@ -79,3 +79,17 @@ export default function Home() {
           <div className="flex flex-col justify-center gap-4 sm:flex-row">
             <a href="https://www.tiktok.com/@ml.blendz._" target="_blank" rel="noopener noreferrer" className="rounded-full border border-zinc-700 px-7 py-3 text-sm font-medium text-white transition-all hover:border-zinc-400 hover:bg-white/5">TikTok @ml.blendz._</a>
             <a href="https://www.instagram.com/ml.blendz._" target="_blank" rel="noopener noreferrer" className="rounded-full border border-zinc-700 px-7 py-3 text-sm font-medium text-white transition-all hover:border-zinc-400 hover:bg-white/5">Instagram @ml.blendz._</a>
+            </div>
+        </AnimateIn>
+      </section>
+
+      <section className="px-4 py-32 text-center">
+        <AnimateIn className="mx-auto max-w-xl">
+          <h2 className="font-display mb-6 text-5xl tracking-widest text-white md:text-6xl">Ready to get a cut?</h2>
+          <p className="mb-10 text-zinc-400">Send a booking request and I&apos;ll confirm via text or email.</p>
+          <Link href="/book" className="glow-gold inline-block rounded-full bg-gold px-12 py-4 text-base font-bold text-black transition-all hover:bg-gold-light hover:scale-105">Book Now</Link>
+        </AnimateIn>
+      </section>
+    </>
+  );
+}
