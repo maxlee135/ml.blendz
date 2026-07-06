@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <>
       <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-4 text-center">
-        <video src="/gallery/haircuts/cut2.MOV" autoPlay muted loop playsInline className="absolute inset-0 h-full w-full object-cover object-center opacity-25" />
+        <video src="/gallery/haircuts/cut2.MOV" autoPlay muted loop playsInline className="absolute inset-0 h-full w-full object-contain opacity-25" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/30 to-zinc-950" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_60%,rgba(212,168,67,0.08),transparent)]" />
         <div className="relative z-10">
