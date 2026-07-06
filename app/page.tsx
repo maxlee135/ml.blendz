@@ -6,12 +6,12 @@ export default function Home() {
   return (
     <>
       <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-4 text-center">
-        <video src="/gallery/haircuts/cut2.MOV" autoPlay muted loop playsInline className="absolute inset-0 h-full w-full object-cover object-top opacity-25"" />
+        <video src="/gallery/haircuts/cut2.MOV" autoPlay muted loop playsInline className="absolute inset-0 h-full w-full object-cover object-top opacity-25" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/30 to-zinc-950" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_60%,rgba(212,168,67,0.08),transparent)]" />
         <div className="relative z-10">
           <AnimateIn delay={0.1}><p className="mb-5 text-xs font-semibold uppercase tracking-[0.35em] text-gold">Los Altos · Mountain View, CA</p></AnimateIn>
-          <AnimateIn delay={0.2}><h1 className="font-display mb-6 text-[clamp(2.5rem,10vw,10rem)] leading-none tracking-widest text-white"">ML.BLENDZ</h1></AnimateIn>
+          <AnimateIn delay={0.2}><h1 className="font-display mb-6 text-[clamp(2.5rem,10vw,10rem)] leading-none tracking-widest text-white">ML.BLENDZ</h1></AnimateIn>
           <AnimateIn delay={0.35}><p className="mb-10 text-lg text-zinc-300 md:text-xl">Precision cuts. Real results.</p></AnimateIn>
           <AnimateIn delay={0.45}>
             <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
@@ -78,18 +78,4 @@ export default function Home() {
           <p className="mb-10 text-xl text-zinc-400">views on TikTok.</p>
           <div className="flex flex-col justify-center gap-4 sm:flex-row">
             <a href="https://www.tiktok.com/@ml.blendz._" target="_blank" rel="noopener noreferrer" className="rounded-full border border-zinc-700 px-7 py-3 text-sm font-medium text-white transition-all hover:border-zinc-400 hover:bg-white/5">TikTok @ml.blendz._</a>
-            <a href="https://www.instagram.com/ml.blendz._" target="_blank" rel="noopener noreferrer" className="rounded-full border border-zinc-700 px-7 py-3 text-sm font-medium text-white transition-all hover:border-zinc-400 hover:bg-white/5">Instagram @ml.blendz._</a>
-          </div>
-        </AnimateIn>
-      </section>
-
-      <section className="px-4 py-32 text-center">
-        <AnimateIn className="mx-auto max-w-xl">
-          <h2 className="font-display mb-6 text-5xl tracking-widest text-white md:text-6xl">Ready to get a cut?</h2>
-          <p className="mb-10 text-zinc-400">Send a booking request and I&apos;ll confirm via text or email.</p>
-          <Link href="/book" className="glow-gold inline-block rounded-full bg-gold px-12 py-4 text-base font-bold text-black transition-all hover:bg-gold-light hover:scale-105">Book Now</Link>
-        </AnimateIn>
-      </section>
-    </>
-  );
-}
+            <a href="https://www.instagram.com/ml.blendz._" target="_blank" rel="noopener noreferrer" className="rounded-full border border-
