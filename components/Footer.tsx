@@ -30,7 +30,15 @@ export default function Footer() {
             </a>
           </div>
           <p className="text-xs text-zinc-700">
-            &copy; {new Date().getFullYear()} ml.blendz
+            &copy; {new Date().getFullYear()} ml.blendz &middot; Designed &amp; built by Max &middot;{" "}
+            <a
+              href="https://github.com/maxlee135/ml.blendz"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline transition-colors hover:text-gold"
+            >
+              View the code
+            </a>
           </p>
         </div>
       </div>
