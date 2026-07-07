@@ -66,7 +66,7 @@ export default function LazyVideo({
           type="button"
           onClick={toggleMute}
           aria-label={muted ? "Unmute video" : "Mute video"}
-          className="absolute bottom-3 right-3 rounded-full bg-black/60 p-2 text-white backdrop-blur transition-colors hover:bg-black/80"
+          className="absolute bottom-3 right-3 z-10 rounded-full bg-black/60 p-2 text-white backdrop-blur transition-colors hover:bg-black/80"
         >
           {muted ? (
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -80,7 +80,7 @@ export default function LazyVideo({
         </button>
       )}
       {caption && (
-        <p className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent px-3 pb-2 pt-8 text-xs font-medium text-white">
+        <p className="pointer-events-none absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent px-3 pb-2 pt-8 text-xs font-medium text-white">
           {caption}
         </p>
       )}
