@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import BookingForm from "@/components/BookingForm";
+import PageHeader from "@/components/PageHeader";
 
 const faqs = [
   {
@@ -34,14 +35,11 @@ export default function Book() {
   return (
     <div className="px-4 py-20">
       <div className="mx-auto max-w-lg">
-        <div className="mb-12 text-center">
-          <h1 className="font-display mb-4 text-5xl tracking-widest text-white md:text-6xl">
-            Book a Cut
-          </h1>
+        <PageHeader eyebrow="Weekends & Weekday Evenings" title="Book a Cut">
           <p className="text-zinc-400">
             Fill this out and I&apos;ll confirm your appointment via text or email.
           </p>
-        </div>
+        </PageHeader>
 
         <BookingForm />
 

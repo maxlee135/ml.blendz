@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import HairGuide from "@/components/HairGuide";
+import PageHeader from "@/components/PageHeader";
 
 export const metadata: Metadata = {
   title: "Hair Guide — ml.blendz",
@@ -12,15 +13,12 @@ export default function HairGuidePage() {
   return (
     <div className="px-4 py-20">
       <div className="mx-auto max-w-2xl">
-        <div className="mb-14 text-center">
-          <h1 className="font-display mb-4 text-5xl tracking-widest text-white md:text-6xl">
-            Hair Guide
-          </h1>
+        <PageHeader eyebrow="Products" title="Hair Guide">
           <p className="text-zinc-400">
             Two questions, and I&apos;ll tell you what to put in your hair — the
             same products I recommend to clients in the chair.
           </p>
-        </div>
+        </PageHeader>
 
         <HairGuide />
 

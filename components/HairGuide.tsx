@@ -143,14 +143,42 @@ const recommendations: Record<HairType, Record<Goal, { picks: Product[]; note: s
   },
 };
 
+// Small line drawings of each hair pattern, drawn as inline SVG paths.
+const hairTypeIcons: Record<HairType, React.ReactNode> = {
+  Straight: (
+    <svg viewBox="0 0 40 24" className="h-6 w-10" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round">
+      <path d="M8 2v20M16 2v20M24 2v20M32 2v20" />
+    </svg>
+  ),
+  Wavy: (
+    <svg viewBox="0 0 40 24" className="h-6 w-10" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round">
+      <path d="M2 8c4-6 8-6 12 0s8 6 12 0 8-6 12 0" />
+      <path d="M2 16c4-6 8-6 12 0s8 6 12 0 8-6 12 0" />
+    </svg>
+  ),
+  Curly: (
+    <svg viewBox="0 0 40 24" className="h-6 w-10" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round">
+      <path d="M2 12c0-5 6-5 6 0s6 5 6 0 6-5 6 0 6 5 6 0 6-5 6 0" />
+      <path d="M2 12c0 5 6 5 6 0" opacity={0.4} />
+    </svg>
+  ),
+  Coily: (
+    <svg viewBox="0 0 40 24" className="h-6 w-10" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round">
+      <path d="M4 12a4 4 0 108 0 4 4 0 10-8 0M16 12a4 4 0 108 0 4 4 0 10-8 0M28 12a4 4 0 108 0 4 4 0 10-8 0" />
+    </svg>
+  ),
+};
+
 function OptionRow<T extends string>({
   options,
   value,
   onChange,
+  icons,
 }: {
   options: readonly T[];
   value: T | null;
   onChange: (v: T) => void;
+  icons?: Record<T, React.ReactNode>;
 }) {
   return (
     <div className="grid grid-cols-2 gap-3">
@@ -159,16 +187,28 @@ function OptionRow<T extends string>({
           key={option}
           type="button"
           onClick={() => onChange(option)}
-          className={`rounded-xl border px-4 py-3 text-sm font-medium transition-all ${
+          className={`flex flex-col items-center gap-2 rounded-xl border px-4 py-4 text-sm font-medium transition-all active:scale-95 ${
             value === option
-              ? "border-gold bg-gold/10 text-gold"
-              : "border-zinc-700 bg-zinc-900 text-zinc-300 hover:border-zinc-500"
+              ? "glow-gold border-gold bg-gold/10 text-gold"
+              : "border-zinc-700 bg-zinc-900 text-zinc-300 hover:border-zinc-500 hover:bg-zinc-800/50"
           }`}
         >
+          {icons && icons[option]}
           {option}
         </button>
       ))}
     </div>
+  );
+}
+
+function StepLabel({ n, children }: { n: number; children: React.ReactNode }) {
+  return (
+    <h2 className="mb-4 flex items-center gap-3 text-lg font-semibold text-white">
+      <span className="font-display flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-gold/40 text-sm tracking-widest text-gold">
+        {n}
+      </span>
+      {children}
+    </h2>
   );
 }
 
@@ -181,40 +221,48 @@ export default function HairGuide() {
   return (
     <div className="space-y-10">
       <div>
-        <h2 className="mb-4 text-lg font-semibold text-white">
-          1. What&apos;s your hair type?
-        </h2>
-        <OptionRow options={hairTypes} value={hairType} onChange={setHairType} />
+        <StepLabel n={1}>What&apos;s your hair type?</StepLabel>
+        <OptionRow options={hairTypes} value={hairType} onChange={setHairType} icons={hairTypeIcons} />
       </div>
 
       <div>
-        <h2 className="mb-4 text-lg font-semibold text-white">
-          2. What do you want out of it?
-        </h2>
+        <StepLabel n={2}>What do you want out of it?</StepLabel>
         <OptionRow options={goals} value={goal} onChange={setGoal} />
       </div>
 
       {result && (
-        <div className="rounded-2xl border border-gold/30 bg-zinc-900 p-8">
-          <h3 className="font-display mb-2 text-2xl tracking-widest text-gold">
-            My Pick{result.picks.length > 1 ? "s" : ""} For You
-          </h3>
-          <p className="mb-6 text-sm leading-relaxed text-zinc-400">{result.note}</p>
-          <div className="space-y-4">
-            {result.picks.map((p) => (
-              <a
-                key={p.name}
-                href={p.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block rounded-xl border border-zinc-700 p-5 transition-colors hover:border-gold/50"
-              >
-                <p className="mb-1 font-semibold text-white">
-                  {p.name} <span className="text-gold">&rarr;</span>
-                </p>
-                <p className="text-sm text-zinc-400">{p.why}</p>
-              </a>
-            ))}
+        <div
+          key={`${hairType}-${goal}`}
+          className="animate-fade-up relative overflow-hidden rounded-2xl border border-gold/30 bg-zinc-900 p-8"
+        >
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(212,168,67,0.10),transparent_60%)]" />
+          <div className="relative">
+            <p className="mb-1 text-xs font-semibold uppercase tracking-[0.3em] text-zinc-500">
+              {hairType} · {goal}
+            </p>
+            <h3 className="font-display mb-3 text-3xl tracking-widest text-gold">
+              My Pick{result.picks.length > 1 ? "s" : ""} For You
+            </h3>
+            <p className="mb-6 text-sm leading-relaxed text-zinc-400">{result.note}</p>
+            <div className="space-y-4">
+              {result.picks.map((p) => (
+                <a
+                  key={p.name}
+                  href={p.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group block rounded-xl border border-zinc-700 bg-zinc-950/50 p-5 transition-all hover:border-gold/50 hover:bg-zinc-950"
+                >
+                  <p className="mb-1 font-semibold text-white">
+                    {p.name}{" "}
+                    <span className="inline-block text-gold transition-transform group-hover:translate-x-1">
+                      &rarr;
+                    </span>
+                  </p>
+                  <p className="text-sm text-zinc-400">{p.why}</p>
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       )}
