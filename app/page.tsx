@@ -1,24 +1,22 @@
 import Link from "next/link";
 import AnimateIn from "@/components/AnimateIn";
 import Counter from "@/components/Counter";
+import LazyVideo from "@/components/LazyVideo";
+import Testimonials from "@/components/Testimonials";
+import { haircutClips, dyeClips } from "@/lib/gallery";
 
 export default function Home() {
   return (
     <>
       {/* Hero */}
       <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-4 text-center">
-        <video
-          src="/gallery/haircuts/cut2.MOV"
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="absolute inset-0 h-full w-full object-contain opacity-25 md:hidden"
-        />
+        <div className="absolute inset-0 opacity-25 md:hidden">
+          <LazyVideo src="/gallery/haircuts/cut2.mp4" poster="/gallery/haircuts/cut2.jpg" />
+        </div>
         <div className="absolute inset-0 hidden md:flex">
-          <video src="/gallery/haircuts/cut1.MOV" autoPlay muted loop playsInline className="h-full w-1/3 object-cover opacity-30" />
-          <video src="/gallery/haircuts/cut4.MOV" autoPlay muted loop playsInline className="h-full w-1/3 object-cover opacity-30" />
-          <video src="/gallery/dye/dye1.MOV" autoPlay muted loop playsInline className="h-full w-1/3 object-cover opacity-30" />
+          <div className="h-full w-1/3 opacity-30"><LazyVideo src="/gallery/haircuts/cut1.mp4" poster="/gallery/haircuts/cut1.jpg" /></div>
+          <div className="h-full w-1/3 opacity-30"><LazyVideo src="/gallery/haircuts/cut4.mp4" poster="/gallery/haircuts/cut4.jpg" /></div>
+          <div className="h-full w-1/3 opacity-30"><LazyVideo src="/gallery/dye/dye1.mp4" poster="/gallery/dye/dye1.jpg" /></div>
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/30 to-zinc-950" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_60%,rgba(212,168,67,0.08),transparent)]" />
@@ -71,20 +69,9 @@ export default function Home() {
           <Link href="/gallery" className="text-sm font-medium text-gold transition-colors hover:text-gold-light">See all &rarr;</Link>
         </AnimateIn>
         <div className="flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 pb-4 md:px-8 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-          {[
-            "/gallery/haircuts/cut1.MOV",
-            "/gallery/haircuts/cut2.MOV",
-            "/gallery/haircuts/cut3.MOV",
-            "/gallery/haircuts/cut4.MOV",
-            "/gallery/haircuts/cut5.MOV",
-            "/gallery/haircuts/cut6.MOV",
-            "/gallery/dye/dye1.MOV",
-            "/gallery/dye/dye2.MOV",
-            "/gallery/dye/dye3.MOV",
-            "/gallery/dye/dye4.MOV",
-          ].map((src, i) => (
-            <div key={i} className="aspect-[9/16] w-48 shrink-0 snap-start overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900 transition-transform hover:scale-[1.03] md:w-56">
-              <video src={src} autoPlay muted loop playsInline className="h-full w-full object-contain" />
+          {[...haircutClips, ...dyeClips].map((clip) => (
+            <div key={clip.src} className="aspect-[9/16] w-48 shrink-0 snap-start overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900 transition-transform hover:scale-[1.03] md:w-56">
+              <LazyVideo src={clip.src} poster={clip.poster} unmutable />
             </div>
           ))}
         </div>
@@ -117,6 +104,27 @@ export default function Home() {
             <Link href="/services" className="text-sm font-medium text-gold transition-colors hover:text-gold-light">View all services &rarr;</Link>
           </AnimateIn>
         </div>
+      </section>
+
+      {/* Testimonials (hidden until real quotes are added in components/Testimonials.tsx) */}
+      <Testimonials />
+
+      {/* Hair guide teaser */}
+      <section className="border-y border-zinc-800/50 bg-zinc-900/40 px-4 py-20">
+        <AnimateIn className="mx-auto max-w-2xl text-center">
+          <h2 className="font-display mb-4 text-4xl tracking-widest text-white md:text-5xl">
+            Not sure what to put in your hair?
+          </h2>
+          <p className="mb-8 text-zinc-400">
+            Answer two quick questions and I&apos;ll tell you exactly what products work for your hair type.
+          </p>
+          <Link
+            href="/hair-guide"
+            className="inline-block rounded-full border border-gold/60 px-10 py-4 text-base font-bold text-gold transition-all hover:bg-gold hover:text-black"
+          >
+            Find Your Products
+          </Link>
+        </AnimateIn>
       </section>
 
       {/* Social proof */}
