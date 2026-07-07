@@ -22,6 +22,15 @@ export default function LazyVideo({
   const videoRef = useRef<HTMLVideoElement>(null);
   const [muted, setMuted] = useState(true);
 
+  // React doesn't update the muted property on a <video> after the first
+  // render, so we have to set it on the element directly.
+  function toggleMute() {
+    const video = videoRef.current;
+    if (!video) return;
+    video.muted = !muted;
+    setMuted(!muted);
+  }
+
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
@@ -55,7 +64,7 @@ export default function LazyVideo({
       {unmutable && (
         <button
           type="button"
-          onClick={() => setMuted(!muted)}
+          onClick={toggleMute}
           aria-label={muted ? "Unmute video" : "Mute video"}
           className="absolute bottom-3 right-3 rounded-full bg-black/60 p-2 text-white backdrop-blur transition-colors hover:bg-black/80"
         >
