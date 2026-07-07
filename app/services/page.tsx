@@ -12,7 +12,7 @@ export default function Services() {
     <div className="px-4 py-20">
       <div className="mx-auto max-w-4xl">
         <div className="mb-16 text-center">
-          <h1 className="mb-4 text-4xl font-bold text-white md:text-5xl">
+          <h1 className="font-display mb-4 text-5xl tracking-widest text-white md:text-6xl">
             Services & Pricing
           </h1>
 
@@ -73,9 +73,16 @@ export default function Services() {
               &bull; Located in Los Altos / Mountain View &mdash; exact address
               shared after you book
             </li>
+            <li>&bull; Available weekends and weekday evenings</li>
             <li>&bull; Appointments confirmed via text or email</li>
             <li>&bull; Cash preferred</li>
           </ul>
+          <Link
+            href="/book#faq"
+            className="mt-4 inline-block text-sm font-medium text-gold transition-colors hover:text-gold-light"
+          >
+            More questions? Read the FAQ &rarr;
+          </Link>
         </div>
 
         <div className="mt-12 text-center">

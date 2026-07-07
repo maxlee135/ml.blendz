@@ -65,6 +65,7 @@ export default function BookingForm() {
           name="name"
           type="text"
           required
+          autoComplete="given-name"
           placeholder="First name or nickname"
           className="w-full rounded-xl border border-zinc-700 bg-zinc-900 px-4 py-3 text-white placeholder-zinc-600 focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold"
         />
@@ -83,7 +84,8 @@ export default function BookingForm() {
           name="contact"
           type="text"
           required
-          placeholder="How should I reach you?"
+          autoComplete="on"
+          placeholder="Phone number or email"
           className="w-full rounded-xl border border-zinc-700 bg-zinc-900 px-4 py-3 text-white placeholder-zinc-600 focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold"
         />
       </div>
@@ -116,16 +118,24 @@ export default function BookingForm() {
           htmlFor="time"
           className="mb-2 block text-sm font-medium text-zinc-300"
         >
-          Preferred day / time
+          Preferred time
         </label>
-        <input
+        <select
           id="time"
           name="time"
-          type="text"
           required
-          placeholder="e.g. Sat afternoon, weekdays after 4pm"
-          className="w-full rounded-xl border border-zinc-700 bg-zinc-900 px-4 py-3 text-white placeholder-zinc-600 focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold"
-        />
+          className="w-full rounded-xl border border-zinc-700 bg-zinc-900 px-4 py-3 text-white focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold"
+        >
+          <option value="">When works for you?</option>
+          <option value="Weekend morning">Weekend — morning</option>
+          <option value="Weekend afternoon">Weekend — afternoon</option>
+          <option value="Weekend evening">Weekend — evening</option>
+          <option value="Weekday evening">Weekday — evening</option>
+          <option value="Flexible">Flexible — whatever's open</option>
+        </select>
+        <p className="mt-2 text-xs text-zinc-600">
+          I cut on weekends and weekday evenings. Exact time confirmed by text or email.
+        </p>
       </div>
 
       {/* Notes */}
